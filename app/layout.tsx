@@ -16,23 +16,32 @@ import { profile, seo } from '@/content/profile';
 import { SITE_URL } from '@/lib/site';
 import './globals.css';
 
+/*
+ * adjustFontFallback: false keeps the original fallback chain from globals.css
+ * (system-ui, Segoe UI… / ui-monospace…). Glyphs the Google files don't contain,
+ * like → and ●, then render exactly as on the original page instead of from a
+ * size-adjusted Arial. (Turbopack ignores this option, hence `next build --webpack`.)
+ */
 const serif = Instrument_Serif({
   weight: '400',
   style: ['normal', 'italic'],
   subsets: ['latin'],
   display: 'swap',
+  adjustFontFallback: false,
   variable: '--font-instrument-serif',
 });
 const sans = IBM_Plex_Sans({
   weight: ['400', '500', '600'],
   subsets: ['latin'],
   display: 'swap',
+  adjustFontFallback: false,
   variable: '--font-ibm-plex-sans',
 });
 const mono = JetBrains_Mono({
   weight: ['400', '500', '700'],
   subsets: ['latin'],
   display: 'swap',
+  adjustFontFallback: false,
   variable: '--font-jetbrains-mono',
 });
 
