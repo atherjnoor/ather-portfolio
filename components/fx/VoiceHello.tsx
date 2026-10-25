@@ -7,13 +7,30 @@ import { useFx } from './FxProvider';
 const GREETING =
   '! Welcome to my workspace. I’m Ather, a full-stack and AI engineer in Winnipeg. Have a look at my work, shoot a few hoops, and if you’re hiring for a nine to five, I’m sharpest at nine a.m.';
 
-function pickVoice(): SpeechSynthesisVoice | null {
-  const vs = window.speechSynthesis.getVoices();
-  return (
-    vs.find((v) => /^en/i.test(v.lang) && /natural|google|samantha|daniel|aria|jenny|guy/i.test(v.name)) ||
-    vs.find((v) => /^en/i.test(v.lang)) ||
-    null
-  );
+/*
+ * The Web Speech API has no "gender" setting, so male voices are picked by name.
+ * Best first: Edge's natural voices, then Chrome's Google male voice, then
+ * macOS/iOS and Windows system voices.
+ */
+const MALE_VOICES = [
+  /\b(Andrew|Guy|Brian|Christopher|Eric|Roger|Steffan|Davis|Tony|Jason|Ryan|Thomas|William|Liam)\b.*Natural/i,
+  /Google UK English Male/i,
+  /\b(Daniel|Alex|Tom|Aaron|Arthur|Oliver|Rishi|Evan|Nathan|Reed|Gordon|Fred)\b/i,
+  /\b(David|Mark|George|James|Richard|Sean)\b/i,
+];
+const FEMALE_VOICES =
+  /\b(Zira|Samantha|Aria|Jenny|Ava|Emma|Michelle|Sonia|Libby|Hazel|Susan|Karen|Moira|Tessa|Victoria|Allison|Fiona|Serena|Kate|Catherine|Natasha|Clara)\b|Google US English|Google UK English Female|Female/i;
+
+function pickVoice(): { voice: SpeechSynthesisVoice | null; male: boolean } {
+  const en = window.speechSynthesis.getVoices().filter((v) => /^en/i.test(v.lang));
+  for (const re of MALE_VOICES) {
+    const v = en.find((x) => re.test(x.name) && !FEMALE_VOICES.test(x.name));
+    if (v) return { voice: v, male: true };
+  }
+  // No known male voice installed: use any English voice that isn't a known female one.
+  const other = en.find((x) => !FEMALE_VOICES.test(x.name));
+  if (other) return { voice: other, male: true };
+  return { voice: en[0] ?? null, male: false };
 }
 
 /**
@@ -52,10 +69,11 @@ export default function VoiceHello() {
       const synth = window.speechSynthesis;
       synth.cancel();
       const u = new SpeechSynthesisUtterance(text.replace(/’/g, "'"));
-      const v = pickVoice();
-      if (v) u.voice = v;
+      const { voice, male } = pickVoice();
+      if (voice) u.voice = voice;
       u.rate = 1.02;
-      u.pitch = 1;
+      // Only female voices on this device: deepen it a little rather than not speaking.
+      u.pitch = male ? 1 : 0.8;
       u.onstart = () => {
         setCaption(text);
         setCaptionShow(true);
