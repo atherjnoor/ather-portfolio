@@ -2,6 +2,7 @@
   --ink:#131412; --side:#161715; --panel:#1A1C19; --deep:#0E0F0D;
   --line:#2E312C; --line2:#3A3D37; --grid:#1B1C1A;
   --paper:#ECE8DF; --body:#C9C6BD; --muted:#A3A399; --dim:#8E8E85;
+  --faint:#85857e; /* quietest text that still meets WCAG AA 4.5:1 on --side and --panel */
   --mint:#7DDCB0; --mint-soft:rgba(125,220,176,.12);
   --serif:var(--font-instrument-serif), Georgia, serif;
   --sans:var(--font-ibm-plex-sans), system-ui, -apple-system, Segoe UI, Arial, sans-serif;
@@ -29,7 +30,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .who span{color:var(--dim);font-size:15px}
 .nav{list-style:none;display:flex;flex-direction:column;gap:4px;font-family:var(--mono);font-size:14px}
 .nav a{display:flex;align-items:center;gap:12px;padding:7px 0;text-decoration:none;color:var(--dim);transition:color .2s}
-.nav a .n{font-size:12px;color:var(--line2);width:20px;transition:color .2s}
+.nav a .n{font-size:12px;color:var(--faint);width:20px;transition:color .2s}
 .nav a::before{content:"";width:3px;height:18px;background:transparent;border-radius:2px;transition:background .2s}
 .nav a:hover{color:var(--paper)}
 .nav a[aria-current="true"]{color:var(--paper)}
@@ -41,7 +42,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .side-foot{margin-top:auto;display:flex;flex-direction:column;gap:8px;font-family:var(--mono);font-size:13px}
 .side-foot a{color:var(--dim);text-decoration:none}
 .side-foot a:hover{color:var(--mint)}
-.side-foot .loc{color:var(--line2);color:#6f6f68}
+.side-foot .loc{color:var(--faint)}
 
 /* ---------- Main + drafting chrome ---------- */
 main{margin-left:var(--side-w);min-height:100vh;position:relative;

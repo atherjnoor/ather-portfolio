@@ -35,7 +35,7 @@ export default function ArchitectureFigure() {
         <span className="label" id="figTitle">
           {figure.title}
         </span>
-        <span className="label" style={{ color: 'var(--line2)' }}>
+        <span className="label" style={{ color: 'var(--faint)' }}>
           {figure.hint}
         </span>
       </div>

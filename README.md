@@ -109,12 +109,6 @@ netlify deploy --build            # draft (preview) URL
 netlify deploy --build --prod     # production
 ```
 
-## Known accessibility notes
+## Accessibility notes
 
-axe reports no serious or critical issues except **colour contrast** on three elements that use the original design's colours. They were left unchanged on purpose:
-
-- sidebar nav numbers `02`–`07` (`--line2` on the sidebar, 1.6:1)
-- "Winnipeg, MB · time" in the sidebar (`#6f6f68`, 3.6:1)
-- the "tap a layer" hint on Fig. 1 (`--line2`)
-
-Raising them to 4.5:1 means changing those colours in `globals.css`.
+axe (run by the Playwright tests) reports no serious or critical issues. To get there, three small texts that used the original colours were lightened to a new `--faint` token (`#85857e`, at least 4.6:1). These were the sidebar nav numbers, "Winnipeg, MB · time" and the "tap a layer" hint. `--line2` is unchanged and is still used for borders.

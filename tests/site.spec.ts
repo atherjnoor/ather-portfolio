@@ -138,8 +138,7 @@ for (const url of ['/', '/work/lastclass/']) {
       `[axe ${url}]`,
       JSON.stringify(serious.map((v) => ({ id: v.id, impact: v.impact, n: v.nodes.length, nodes: v.nodes.slice(0, 6).map((n) => n.target.join(' ')) })), null, 1),
     );
-    // Contrast findings are original design colours, reported rather than changed (see README).
-    expect(serious.filter((v) => v.id !== 'color-contrast')).toEqual([]);
+    expect(serious).toEqual([]);
   });
 }
 
