@@ -53,7 +53,6 @@ Placeholders still to fill:
 - `lab.ts`: Atlas, confirm it's shareable
 - `education.ts`: University of the People, confirm status
 - `projects.ts` (case study): decisions, screenshots, one line per core flow, next steps
-- `interests.ts`: cooking card, signature dish + one line
 
 ## How the effects are wired
 

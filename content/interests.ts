@@ -59,7 +59,7 @@ export const cooking = {
   front: 'Like code, except you get to eat the output.',
   frontHint: 'Flip the card ↻',
   backLabel: 'On the menu',
-  dish: '[Your signature dish]' as Rich,
-  line: '[One line on what you love to cook]' as Rich,
+  dish: 'Chicken BBQ wrap' as Rich,
+  line: 'I love to cook BBQ chicken. High protein, every time.' as Rich,
   backHint: 'Flip back ↻',
 };
