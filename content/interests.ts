@@ -56,7 +56,6 @@ export const hardware = {
 
 export const cooking = {
   label: 'Cooking',
-  cardLabel: 'Cooking card — press to flip',
   front: 'Like code, except you get to eat the output.',
   frontHint: 'Flip the card ↻',
   backLabel: 'On the menu',

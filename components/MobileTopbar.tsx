@@ -25,7 +25,7 @@ export default function MobileTopbar() {
 
   return (
     <header className="topbar">
-      <SectionLink section="overview" className="mark" aria-label="Ather Johear Noor, home">
+      <SectionLink section="overview" className="mark" aria-label="AJN — Ather Johear Noor, home">
         {profile.initials}
       </SectionLink>
       <button id="menuBtn" aria-expanded={menuOpen} aria-controls="sidebar" onClick={() => fx.setMenu(!menuOpen)}>

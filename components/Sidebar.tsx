@@ -34,7 +34,7 @@ export default function Sidebar() {
       <SectionLink
         section="overview"
         className="mark"
-        aria-label="Ather Johear Noor, home"
+        aria-label="AJN — Ather Johear Noor, home"
         style={{ alignSelf: 'flex-start' }}
         onClick={close}
       >

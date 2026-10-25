@@ -45,7 +45,12 @@ export default function SectionSpy() {
 export function LegacyHashRedirect() {
   const router = useRouter();
   useEffect(() => {
-    if (window.location.hash.startsWith('#/work/lastclass')) router.replace('/work/lastclass/');
+    const check = () => {
+      if (window.location.hash.startsWith('#/work/lastclass')) router.replace('/work/lastclass/');
+    };
+    check();
+    window.addEventListener('hashchange', check);
+    return () => window.removeEventListener('hashchange', check);
   }, [router]);
   return null;
 }

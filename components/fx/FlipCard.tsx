@@ -15,7 +15,7 @@ export default function FlipCard() {
         id="flip"
         type="button"
         aria-pressed={flipped}
-        aria-label={cooking.cardLabel}
+        // No aria-label: the button is named by its text (both faces), so screen readers hear the dish too.
         onClick={() => setFlipped(!flipped)}
       >
         <span className="face front">
