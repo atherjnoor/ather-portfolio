@@ -7,7 +7,7 @@ export const profile = {
   location: 'Winnipeg, MB',
   email: 'atherjohearn@gmail.com',
   github: { url: 'https://github.com/atherjnoor', handle: 'atherjnoor' },
-  linkedin: { url: 'https://www.linkedin.com/in/ather-johearn-621541278', handle: 'Ather Johear Noor' },
+  linkedin: { url: 'https://www.linkedin.com/in/ather-johear-n-621541278/', handle: 'Ather Johear Noor' },
 } as const;
 
 export const seo = {
