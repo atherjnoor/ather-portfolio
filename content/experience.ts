@@ -26,7 +26,7 @@ export const roles: Role[] = [
     when: 'APR — JUL 2026',
     title: 'Full Stack Engineer',
     org: 'OutreachGenius · Winnipeg',
-    text: '[1–2 lines on what you built]',
+    text: 'Built and maintained frontend and backend features in TypeScript, Next.js, React and Python, on PostgreSQL and MongoDB. Designed the REST APIs connecting services, and tracked down defects to keep releases reliable.',
   },
   {
     when: 'AUG — OCT 2025',

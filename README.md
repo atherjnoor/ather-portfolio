@@ -48,7 +48,6 @@ All copy lives in typed files in `content/`:
 Placeholders still to fill:
 
 - `projects.ts`: OllamaForge exact repo URL
-- `experience.ts`: OutreachGenius, 1–2 lines on what you built
 - `lab.ts`: Voice agent (AssemblyAI hackathon), what it does + link
 - `lab.ts`: Atlas, confirm it's shareable
 - `education.ts`: University of the People, confirm status
