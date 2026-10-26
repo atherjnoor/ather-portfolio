@@ -4,7 +4,7 @@ export const offSection = {
   titleblock: ['Sheet 05', 'Off the clock', 'After hours'] satisfies TitleBlock,
   headline: { plain: 'When I’m not ', em: 'shipping.' } satisfies Headline,
   // The lede ends with a <kbd>-styled "B" and a full stop; see OffTheClock.tsx.
-  lede: 'Computer hardware, cooking and basketball. I’m also a big Batman fan, which is why bats keep flying around this page. Press',
+  lede: 'Computer hardware, cooking, basketball and working out. I’m also a big Batman fan, which is why bats keep flying around this page. Press',
 };
 
 export const hoopsCopy = {
@@ -52,6 +52,18 @@ export const hardware = {
     { name: 'RAM', sub: 'memory', info: 'Where running work lives. Run out and everything starts swapping, then crawling.' },
     { name: 'SSD', sub: 'storage', info: 'Fast storage means fast installs, fast container starts and fast everything else.' },
   ],
+};
+
+export const workout = {
+  label: 'Working out · gym',
+  title: { plain: 'I like to ', em: 'work out.' } satisfies Headline,
+  text: 'Lifting keeps me sharp, and the high-protein cooking keeps the lifting going.',
+  split: '[Your training split or favourite lift]' as Rich,
+  visualLabel: 'A barbell on a rack. Use the Do a rep button to lift it.',
+  button: 'Do a rep',
+  repsPerSet: 10,
+  intro: 'Press the button (or Space) for each rep. 10 reps make a set.',
+  setDone: (n: number) => `Set ${n} done. Rest, then go again.`,
 };
 
 export const cooking = {

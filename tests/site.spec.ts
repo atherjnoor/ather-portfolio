@@ -169,3 +169,14 @@ test('pointer effects, ruler and active section (desktop)', async ({ page }, inf
   await page.locator('[data-f="idea"]').click();
   await expect(page.locator('#labList li:not([hidden])')).toHaveCount(2);
 });
+
+test('workout card counts reps and completes a set', async ({ page }) => {
+  await page.goto('/#offclock');
+  const btn = page.locator('#repBtn');
+  for (let i = 0; i < 10; i++) {
+    await btn.click();
+    await page.waitForTimeout(420);
+  }
+  await expect(page.locator('#gymCount')).toHaveText('0 / 10 · 1 set');
+  await expect(page.locator('.gym-play .hoopmsg')).toHaveText('Set 1 done. Rest, then go again.');
+});

@@ -44,6 +44,7 @@ function command(fx: FxActions, s: string) {
     fx.speak(line);
     return;
   }
+  if (/\bgym\b|work ?out|lifting/.test(s)) return nav('offclock', 'Working out'); // before "work"
   if (/project|work|portfolio/.test(s)) return nav('work', 'Selected work');
   if (/\blab\b|experiment/.test(s)) return nav('lab', 'Lab');
   if (/experience|career|job|resume/.test(s)) return nav('experience', 'Experience');

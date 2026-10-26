@@ -1,6 +1,6 @@
 /**
  * Canonical origin for metadata, sitemap and robots.
  * Set NEXT_PUBLIC_SITE_URL in Netlify (Site settings → Environment variables)
- * once the final domain is known. The fallback is the expected Netlify URL.
+ * if the site moves to a custom domain. The fallback is the live Netlify URL.
  */
-export const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL || 'https://ather-portfolio.netlify.app').replace(/\/+$/, '');
+export const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL || 'https://ather-profile.netlify.app').replace(/\/+$/, '');

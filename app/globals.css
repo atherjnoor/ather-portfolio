@@ -417,6 +417,20 @@ body.work-hours .hourstime{color:var(--mint)}
 .pot::after{content:"";position:absolute;right:-30px;top:6px;width:30px;height:3px;background:var(--muted);border-radius:2px}
 .steam{position:absolute;bottom:14px;width:6px;height:34px;border-radius:6px;background:linear-gradient(to top,rgba(236,232,223,.4),transparent);filter:blur(2px);opacity:0;animation:steam 2.4s ease-in infinite}
 @keyframes steam{0%{transform:translateY(8px) scaleY(.6);opacity:0}40%{opacity:1}100%{transform:translate(6px,-26px) scaleY(1.2);opacity:0}}
+/* working out: full-width card with a barbell that lifts on each rep */
+.full{grid-column:1/-1}
+.gym{display:grid;grid-template-columns:1fr 1.15fr;gap:40px;align-items:center}
+.gym-copy{display:flex;flex-direction:column;gap:14px}
+.gym-play{display:flex;flex-direction:column;gap:14px}
+.rack{position:relative;height:150px;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:radial-gradient(circle at 1px 1px,var(--line) 1px,transparent 0) 0 0/22px 22px,var(--deep)}
+.rack::after{content:"";position:absolute;left:0;right:0;bottom:18px;height:1px;background:var(--line2)}
+.rack .post{position:absolute;bottom:18px;width:4px;height:62px;background:var(--line2);border-radius:2px}
+.rack .lift{position:absolute;left:0;right:0;top:64px;height:0;transition:transform .38s cubic-bezier(.2,.7,.2,1)}
+.rack.up .lift{transform:translateY(-38px)}
+.rack .bar{position:absolute;left:4%;right:4%;top:-2px;height:4px;border-radius:2px;background:var(--muted)}
+.rack .plate{position:absolute;top:-24px;width:12px;height:48px;border-radius:3px;background:#121311;border:1px solid var(--line2);z-index:1}
+.rack .plate.big{top:-34px;height:68px;border-color:var(--mint);box-shadow:0 0 0 3px var(--mint-soft)}
+@media (max-width:860px){ .gym{grid-template-columns:1fr;gap:20px} }
 @media (max-width:1100px){ .offgrid{grid-template-columns:1fr 1fr} }
 @media (max-width:860px){
   .offgrid{grid-template-columns:1fr} .wide{grid-column:auto}

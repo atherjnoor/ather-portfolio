@@ -3,6 +3,7 @@ import FlipCard from '../fx/FlipCard';
 import HardwareBoard from '../fx/HardwareBoard';
 import Hoops from '../fx/Hoops';
 import WorkHours from '../fx/WorkHours';
+import Workout from '../fx/Workout';
 import { SectionHeading, TitleBlock } from '../TitleBlock';
 
 export default function OffTheClock() {
@@ -19,6 +20,7 @@ export default function OffTheClock() {
         <WorkHours />
         <HardwareBoard />
         <FlipCard />
+        <Workout />
       </div>
     </section>
   );

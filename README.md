@@ -53,6 +53,7 @@ Placeholders still to fill:
 - `lab.ts`: Atlas, confirm it's shareable
 - `education.ts`: University of the People, confirm status
 - `projects.ts` (case study): decisions, screenshots, one line per core flow, next steps
+- `interests.ts`: workout card, your training split or favourite lift
 
 ## How the effects are wired
 
@@ -90,7 +91,7 @@ Visitors with `prefers-reduced-motion` get no animations or pointer effects, and
 
 `netlify.toml` sets everything up: build command `npm run build`, publish folder `out`, Node 20, and security headers. Keep `microphone=(self)` in the `Permissions-Policy` header, because voice commands need it.
 
-Set **`NEXT_PUBLIC_SITE_URL`** (for example `https://atherjnoor.com`) under *Site configuration → Environment variables* so canonical URLs, Open Graph, the sitemap and robots point at the real domain. Without it, they fall back to `https://ather-portfolio.netlify.app`.
+Set **`NEXT_PUBLIC_SITE_URL`** (for example `https://atherjnoor.com`) under *Site configuration → Environment variables* so canonical URLs, Open Graph, the sitemap and robots point at the real domain. Without it, they fall back to the live site, `https://ather-profile.netlify.app`.
 
 **Option A: Git (recommended)**
 
