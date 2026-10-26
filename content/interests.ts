@@ -58,7 +58,7 @@ export const workout = {
   label: 'Working out · gym',
   title: { plain: 'I like to ', em: 'work out.' } satisfies Headline,
   text: 'Lifting keeps me sharp, and the high-protein cooking keeps the lifting going.',
-  split: '[Your training split or favourite lift]' as Rich,
+  split: 'Favourite lift: bench press.' as Rich,
   visualLabel: 'A barbell on a rack. Use the Do a rep button to lift it.',
   button: 'Do a rep',
   repsPerSet: 10,

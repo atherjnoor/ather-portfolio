@@ -53,7 +53,6 @@ Placeholders still to fill:
 - `lab.ts`: Atlas, confirm it's shareable
 - `education.ts`: University of the People, confirm status
 - `projects.ts` (case study): decisions, screenshots, one line per core flow, next steps
-- `interests.ts`: workout card, your training split or favourite lift
 
 ## How the effects are wired
 
